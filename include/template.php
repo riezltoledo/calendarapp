@@ -1,0 +1,71 @@
+<?php
+if (!defined('WEB_ROOT')) {
+	exit;
+}
+
+$self = WEB_ROOT . 'admin/index.php';
+?>
+<!DOCTYPE html>
+<html>
+<head>
+<?php include('head.php'); ?>
+
+<style>
+  .calbutton {
+    float: right;
+    margin-bottom: 10px;
+    margin-top: -30px;
+  }
+</style>
+</head>
+<body class="skin-blue sidebar-mini">
+<div class="wrapper">
+  <header class="main-header">
+    <!-- Logo -->
+    <a href="<?php echo WEB_ROOT; ?>" class="logo">
+    <!-- mini logo for sidebar mini 50x50 pixels -->
+    <span class="logo-lg"><b>CalSched</b></span> </a>
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top" role="navigation">
+      <?php include('nav.php'); ?>
+    </nav>
+  </header>
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+   <?php include('sidebar.php'); ?>
+  </aside>
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header schedbtn">
+      <h1>  <small></small> </h1>
+      <button type="button" class="btn btn-primary calbutton" data-toggle="modal"data-target="#exampleModal">
+      <b>+</b> Schedule 
+      </button>
+    </section>
+    <!-- Main content -->
+    <section class="content">
+      
+	  <div class="row">
+	  	<div class="col-md-12">
+		<?php include('messages.php'); ?>
+		</div>
+	  </div>
+	  
+	  <div class="row">
+	  	<?php
+			require_once $content;	 
+		?>
+      </div>
+      <!-- /.row -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+		<?php include('footer.php'); ?>
+	</footer>
+</div>
+<!-- ./wrapper -->
+</body>
+</html>
